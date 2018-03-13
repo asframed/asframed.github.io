@@ -1,0 +1,329 @@
+/*------------------------------------*\
+    Grid System 
+\*------------------------------------*/
+
+
+/** 
+    Notes:
+
+     Column Gutters:
+     * Use ems for gutter units, will size accordingly with typography.
+     * Possibility of setting units as % as well.
+     * Gutter size 2em = equivalent to 32px
+     * By Defaut only go up to desk_xl for variable column display 
+
+*/
+
+
+/*------------------------------------*\
+    Base Grid Setup
+\*------------------------------------*/
+
+
+.container {
+    width:94%; max-width: $container-max-width; margin: auto; }
+
+
+.row {
+
+    // Apply `.Clearfix` to .row by default.
+    @extend .clearfix;
+
+    overflow: hidden;
+    *zoom: 1;
+
+    /* Gutter size, equivalent to 32px */
+    &.add--left {
+        margin-left: -2em;  /* Gutter size, equivalent to 32px */
+    }
+
+
+}
+
+
+.col {
+
+    min-height: 1px;
+    float: left;
+    
+
+    /* Gutter size, equivalent to 32px */
+    &.add--gutter {
+        padding-left: 2em; 
+    }
+
+
+}
+
+
+/*------------------------------------*\
+    Coloumns
+\*------------------------------------*/
+
+
+/**
+ *  We will build our grid mobile first so we will 
+ *  start with basic mobile grid sizes and work our way up.
+ *
+ */
+
+
+.full {
+
+    width: 100%; 
+}
+
+.half {
+    width: 50%;
+}
+
+.quarter {
+    width: 25%;
+}
+
+.third {
+    width: 33.33%;
+}
+
+.two-third {
+    width: 66.66%;
+} 
+
+.three-quarter {
+    width: 75%;
+}
+
+
+
+ /**
+  * Mobile_sm:  min-width 360px
+  */
+
+ @media screen and (min-width: 360px) {
+
+    .half__mob_sm {
+        width: 50%;
+    }
+
+    .quarter__mob_sm {
+        width: 25%;
+    }
+
+    .third__mob_sm {
+        width: 33.33%;
+    }
+
+    .two-third__mob_sm {
+        width: 66.66%;
+    }
+
+    .three-quarter__mob_sm {
+        width: 75%;
+    }
+
+    .full__mob_sm  {
+        width: 100%; 
+    }
+
+}
+
+
+/**
+  * Mobile_md:  min-width 480px 
+  */
+
+@media screen and (min-width: 480px) {
+
+    .half__mob_md {
+        width: 50%;
+    }
+
+    .quarter__mob_md {
+        width: 25%;
+    }
+
+    .third__mob_md {
+        width: 33.33%;
+    }
+
+    .two-third__mob_md {
+        width: 66.66%;
+    }
+
+    .three-quarter__mob_md {
+        width: 75%;
+    }
+
+    .full__mob_md  {
+        width: 100%; 
+    }
+
+}
+
+
+/**
+ * Mobile_lrg:  min-width 640px 
+ */
+
+@media screen and (min-width: 640px) {
+
+    .half__mob_lrg {
+        width: 50%;
+    }
+
+    .quarter__mob_lrg {
+        width: 25%;
+    }
+
+    .third__mob_lrg {
+        width: 33.33%;
+    }
+
+    .two-third__mob_lrg {
+        width: 66.66%;
+    }
+
+    .three-quarter__mob_lrg {
+        width: 75%;
+    }
+
+    .full__mob_lrg  {
+        width: 100%; 
+    }
+
+}
+
+
+/**
+ * Handheld_sm:  min-width: 768px 
+ */
+@media screen and (min-width: 768px) {
+
+    .half__hand_sm {
+        width: 50%;
+    }
+
+    .quarter__hand_sm {
+        width: 25%;
+    }
+
+    .third__hand_sm {
+        width: 33.33%;
+    }
+
+    .two-third__hand_sm {
+        width: 66.66%;
+    }
+
+    .three-quarter__hand_sm {
+        width: 75%;
+    }
+
+    .full__hand_sm  {
+        width: 100%; 
+    }
+
+}
+
+
+/**
+ * Handheld_md:  min-width 980px 
+ */
+
+@media screen and (min-width: 980px) {
+
+    .half__hand_md {
+        width: 50%;
+    }
+
+    .quarter__hand_md {
+        width: 25%;
+    }
+
+    .third__hand_md {
+        width: 33.33%;
+    }
+
+    .two-third__hand_md {
+        width: 66.66%;
+    }
+
+    .three-quarter__hand_md {
+        width: 75%;
+    }
+
+    .full__hand_md  {
+        width: 100%; 
+    }
+
+}
+
+
+
+/**
+ * Desktop_lrg:  min-width 1140px 
+ */
+
+@media screen and (min-width: 1140px) {
+
+    .half__desk_lrg {
+        width: 50%;
+    }
+
+    .quarter__desk_lrg {
+        width: 25%;
+    }
+
+    .third__desk_lrg {
+        width: 33.33%;
+    }
+
+    .two-third__desk_lrg {
+        width: 66.66%;
+    }
+
+    .three-quarter__desk_lrg {
+        width: 75%;
+    }
+
+    .full__desk_lrg {
+        width: 100%; 
+    }
+
+}
+
+
+
+/**
+ * Desktop_xlrg:  min-width 1440px 
+ */
+
+@media screen and (min-width: 1440px) {
+
+    .half__desk_xlrg {
+        width: 50%;
+    }
+
+    .quarter__desk_xlrg {
+        width: 25%;
+    }
+
+    .third__desk_xlrg {
+        width: 33.33%;
+    }
+
+    .two-third__desk_xlrg {
+        width: 66.66%;
+    }
+
+    .three-quarter__desk_xlrg {
+        width: 75%;
+    }
+
+    .full__desk_xlrg {
+        width: 100%; 
+    }
+
+}
+
+

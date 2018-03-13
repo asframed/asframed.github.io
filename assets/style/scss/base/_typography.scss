@@ -1,0 +1,164 @@
+/*------------------------------------*\
+    Typography
+\*------------------------------------*/
+
+/**
+ * Global base type styles 
+ *  The Typographic system is built using a `modular scale`
+ */
+
+/**
+ * Resources for scaleable type:
+ * 1) http://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights/
+ * 2) http://clagnut.com/blog/348
+ * 3) http://alistapart.com/article/more-meaningful-typography
+ */
+
+/*
+    Scale type with viewport:
+    font-size: calc(0.75em + 1vw);
+*/ 
+
+html {
+
+    /**
+      Firefox 3, Safari 5+, and Chrome 4+, 
+      this property-value pair enables a font’s native kerning instructions 
+     */
+    text-rendering: optimizeLegibility;  
+    -webkit-text-size-adjust: 100%; 
+    -ms-text-size-adjust: 100%; 
+    font-size: 100%; /* set default 16px */
+
+}
+
+body {
+    
+    font-weight: normal;
+    font-style: normal;
+    font-family:    $base-font-family; 
+    font-size:      $base-font-size;
+    line-height:    $base-line-height; 
+    color:          $base-text-color;
+
+    /**
+      Better Type rendering, removes `auto` bolding. 
+      Text on dark background will appear thinner because of antialiasing.
+    */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+}
+
+input,
+textarea,
+button, 
+select, 
+th, 
+td {  
+    font-size: 100%;  }
+
+/* Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome. */
+b,
+strong {
+  font-weight: bold; }
+
+cite,
+small {
+    // 12px
+    font-size: em(12); }
+
+cite,
+em {  
+    font-style: italic; }
+
+
+/* Prevent `sub` and `sup` affecting `line-height` in all browsers. */
+sub,
+sup {
+    position: relative;
+    font-size: 0.75em;
+    line-height: 0;
+    vertical-align: baseline; }
+
+sup {
+    top: -0.5em; }
+
+sub {
+    bottom: -0.25em; } 
+
+/* Set consistent quote types. */
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none; 
+}
+
+blockquote, 
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+
+blockquote cite:before { 
+    content: "\2014 \0020";
+}
+
+blockquote {
+    padding: 3% 6%;
+    margin-bottom: 3%;
+    border-top: 3px solid #ccc;
+    border-bottom: 3px solid #ccc;
+    font-family: $serif-font;
+
+    > p {
+    margin: 0; }
+
+}   
+
+
+/**
+    Text Size Classes 
+    -------------------------
+    Range: 12px–36px
+ */
+
+.text-size-12 {
+    font-size: em(12px); /* 12px */ }
+
+.text-size-14 {
+    font-size: em(14px); /* 14px */ }    
+
+.text-size-16 {
+    font-size: em(16px); /* 16px */ }
+
+.text-size-18 {
+    font-size: em(18px); /* 18px */ }
+
+.text-size-22 {
+    font-size: em(22px); /* 22px */ }
+
+.text-size-28 {
+    font-size: em(28px); /* 28px */ }        
+
+.text-size-36 {
+    font-size: em(36px); /* 36px */ }
+
+
+/**
+    Text Styles / Utility Classes
+    --------------------------------
+ */
+
+.serif-font {
+    font-family: $serif-font; }
+
+.text-line { 
+    display: block; }
+
+/* make text look like a form label el */
+.text-label {
+    margin: 0 0 0.5em;  
+    font-weight: bold; font-size: em(16px);
+}
+

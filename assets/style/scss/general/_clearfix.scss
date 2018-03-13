@@ -1,0 +1,38 @@
+/*------------------------------------*\
+    Clearfix 
+\*------------------------------------*/
+
+/*
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+ /**
+ * Micro clearfix, as per: css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
+ */
+
+ //
+ //  Extend the clearfix class with Sass to avoid the `.clearfix` class appearing over
+ //  and over in your markup. 
+ //  Example: @extend .clearfix;
+ //
+ 
+ .clearfix {
+
+    /* trigger hasLayout and contain floats For IE 6/7 only */
+    *zoom: 1;
+    
+    &:before,
+    &:after {
+        content: ''; 
+        display: table; }
+
+    &:after {
+        clear: both; } }
+
+        

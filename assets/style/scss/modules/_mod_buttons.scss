@@ -1,0 +1,69 @@
+/*------------------------------------*\
+    # Button Modules and classes
+\*------------------------------------*/
+
+/**
+ *  Extend button styles with .button class
+ *  !default buton settings defined in 'globals/_defaults.scss'
+ */
+
+
+.button {
+    $radius: 0;
+
+    /* Add round corners */
+    border-radius: $radius;
+    background-clip: border-box;
+}
+
+/**
+ *  ## Button Sizes
+ */
+
+.button.button--small {
+    padding: 0.5em 0.75em;
+    font-size: 75%; }
+
+
+/**
+ *  ## Button Styles (outline, solid, primary, etc..)
+ */
+
+.button.button--outline {
+    background: 0 none !important;
+    border: 1px solid #ccc; 
+    color: #ccc;
+
+
+    &:hover,
+    &:focus {
+        /* override default button input styles */
+        background: #333 !important;
+        border: 1px solid transparent !important;
+        color: #fefefe; }
+
+} 
+
+.button.button--outline.button--light {
+
+    border-color: $cream; 
+    color: $cream;
+
+    &:hover,
+    &:focus {
+        /* override default button input styles */
+        background-color: $cream !important;
+        color: $lighter-black; }
+
+}
+
+/**
+ *  Force button to look like a link <a>
+ *  ------------------------------------
+ *  Extend with your custom styles!
+ */
+
+.button.button--link {
+    border: 0 none!important;
+    background: 0 none !important; }
+    

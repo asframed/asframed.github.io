@@ -1,0 +1,134 @@
+/*------------------------------------*\
+    Normalize / Reset
+\*------------------------------------*/
+
+
+/**
+ *  Custom modified version of normalize.css
+ *  You can find the original here: http://necolas.github.io/normalize.css/
+ */
+
+/**
+ * CONTENTS:
+ * ~ Reset...............Basic reset of defaults
+ * ~ Typography................Basic Type elements
+ * ~ Code/Preformatted................Computer related/generated content
+ */
+
+
+/*------------------------------------*\
+    ~ Reset
+\*------------------------------------*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, 
+abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, 
+strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, 
+table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, 
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  border: 0;	
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; 
+}
+
+/*
+ *  HTML5 display definitions
+ *  Correct `block` display not defined in IE 8/9.
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+html {
+  box-sizing: border-box; }
+
+
+body {
+  margin: 0; /* Remove default margin. */
+  background: #fafafa; /* Default bg */
+}
+
+/* Address styling not present in IE 8/9. */
+[hidden] {
+  display: none;
+}
+
+/* Address differences between Firefox and other browsers. */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+  overflow: hidden;
+  border-top: 0 none;
+  border-left: 0 none;
+  border-right: 0 none;
+  border-bottom: 1px solid #CCC;
+}
+
+
+/*------------------------------------*\
+    ~ Typography
+\*------------------------------------*/
+
+
+/*
+ *  Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+
+/* Address styling not present in Safari 5 and Chrome. */
+
+dfn {
+  font-style: italic;
+}
+
+
+/* Address styling not present in IE 8/9. */
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+
+/*------------------------------------*\
+    ~ Code / Preformated
+\*------------------------------------*/
+
+
+/* Correct font family set oddly in Safari 5 and Chrome. */
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+
+/* Improve readability of pre-formatted text in all browsers. */
+
+pre {
+  white-space: pre-wrap;
+}
+

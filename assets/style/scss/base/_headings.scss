@@ -1,0 +1,56 @@
+/*------------------------------------*\
+    Headings
+\*------------------------------------*/
+
+/**
+ * As per: csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css
+ *
+ * When we define a heading we also define a corresponding class to go with it.
+ * This allows us to apply, say, `class=alpha` to a `h3`; a double-stranded
+ * heading hierarchy.
+ */
+
+
+h1, h2, h3, h4, h5, h6 {
+    margin: $vert-spacing 0 0.5em; 
+    font-weight: bold;
+    line-height: 1.25; 
+    text-transform: uppercase;
+}
+
+
+/**
+    Heading Sizes (1-6)
+    ----------------------------
+    Range: 14px–32px
+ */
+
+h1,
+.h--alpha { 
+    font-size: em(32px); // $alpha; 
+} 
+
+h2,
+.h--beta { 
+    font-size: em(28px); // $beta;
+} 
+
+h3,
+.h--gamma { 
+    font-size: em(22px); // $gamma;
+} 
+
+h4,
+.h--delta { 
+    font-size: em(18px); // $delta; 
+} 
+
+h5,
+.h--epsilon { 
+    font-size: em(16px); // $epsilon;
+} 
+
+h6,
+.h--zeta { 
+    font-size: em(14px); // $zeta;
+} 

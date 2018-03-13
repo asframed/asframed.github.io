@@ -1,0 +1,32 @@
+/*------------------------------------*\
+    Items - list
+\*------------------------------------*/
+
+/**
+    Extends '.list--stacked' 
+    Displays basic list of items and item content.
+ */
+
+.item-list {
+    // component settings 
+    $border-color: #ccc; 
+
+    @extend .list--stacked; 
+    margin: 0 0 1.5em;
+
+
+    .title {
+        font-size: em(18px); margin-bottom: 0.75em; }
+
+
+    .list__item {
+        padding: 0.75em 0.5em;
+        border-bottom: 1px solid $border-color;   
+    }
+
+    .list__item:last-child {
+        border: 0 none;
+    }
+
+
+}

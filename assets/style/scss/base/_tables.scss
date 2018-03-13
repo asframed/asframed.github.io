@@ -1,0 +1,37 @@
+/*------------------------------------*\
+    Tables
+\*------------------------------------*/
+
+
+table {
+  width: 100%; 
+  /* Remove most spacing between table cells. */  
+  border-collapse: collapse; // Better Apperance styling
+  border-spacing: 0;
+
+  /* Hides empty data */
+    empty-cells: hide; }
+
+
+/* Generic Styling for Desktops/Laptops */
+
+th { 
+
+  font-weight: bold; }
+
+td, th { 
+  padding: 0.25em 0.5em; 
+  border: 1px solid #ccc; 
+  text-align: left; }
+
+
+/* Table wrap utility */
+.table-wrap {
+    width: 100%;
+    max-width: 500px;
+    margin: 5% auto; }
+
+
+/* Zebra striping */
+tr:nth-of-type(even) { 
+  background: #eee; } 

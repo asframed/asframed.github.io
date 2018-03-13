@@ -1,0 +1,122 @@
+/*------------------------------------*\
+    Nav List Module
+\*------------------------------------*/
+
+/**
+    Creates simple nav Menu Structure.
+    @extends basic list styles and classes (base/_lists.scss)
+
+    Some code is Modified from: Foundation6
+    Link: https://github.com/zurb/foundation-sites/blob/master/scss/components/_menu.scss
+ */
+
+
+/**
+   Global .nav-list Styles:
+   ------------------------
+
+   Assign basic navigation menu styles to extend enlessly...
+
+   - a navigation "menu" may contain many .nav-list's
+
+ */
+
+[role="navigation"],
+.nav-list {
+    // reset list w/the .list--unstyled class (_lists.scss)
+    @extend .list--unstyled;
+
+    // reset gloabl .nav-menu link styles
+    a {
+        display: block;
+        text-decoration: none;
+
+        // Global .nav-menu Link :hover 
+        &:hover {
+            text-decoration: underline; }
+    }
+
+    li a,
+    .nav__item a {
+        display: block;
+        padding: 0.25em 0.5em; // Proportionatly Increase click Target for fingers
+        line-height: 1; // Reset line height to make the height of the overall item easier to calculate
+    }
+
+}
+
+
+/**
+  Force Stacked Menu
+ */
+.nav-list.nav-list--stacked {
+    // @extedns .list classes (base/_lists.scss)
+    @extend .list--stacked; }
+
+
+/**
+  Force Inline (Horizontal) Menu
+ */
+.nav-list.nav-list--inline {
+    // @extedns .list classes (base/_lists.scss)
+    @extend .list--inline; } 
+
+
+/**
+    Light Styling:
+    --------------
+    Nav menu items have light dividers between items
+    used with .is--responsive class
+ */ 
+.nav-list.is--light {
+
+    // Add Vertical Dividers
+    li,
+    .nav__item {
+        border-bottom: 1px solid #ccc;
+
+        // remove border from last child .nav__item (li)
+        &:last-child {
+            border: 0; }
+
+    }
+    
+
+    /**
+        Force Horizontal layout:
+        ------------------------
+     */
+
+    &.nav-list--inline {
+
+        li,
+        .nav__item {
+            // Dividers
+            border: 0; // reset borders
+            border-right: 1px solid #ccc; }
+
+    }
+
+
+    /**
+        Force Stacked layout:
+        ---------------------
+     */
+
+     &.nav-list--stacked {
+
+        // Add Vertical Dividers
+        li,
+        .nav__item {
+            border: 0; // reset all borders
+            border-bottom: 1px solid #ccc; 
+
+            // remove border from last child .nav__item (li)
+            &:last-child {
+                border: 0; }
+
+        }
+
+     }
+
+}

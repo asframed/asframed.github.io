@@ -1,0 +1,17 @@
+/*------------------------------------*\
+    Flexbox General 
+\*------------------------------------*/
+/**
+ *  General flex layout classes
+ */
+
+/* flexbox container element */
+/** 
+    initiate flexbox context
+    Applied to main flex parent el, flexbox layouts also extend this class within 
+      the main layout class applied to parent element.
+*/
+ .flex-container {
+    display: flex;
+    flex-direction: column; /* stack header / section (flex-page) / footer */
+    min-height: 100vh; }

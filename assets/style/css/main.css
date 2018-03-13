@@ -1,0 +1,485 @@
+@charset "UTF-8";
+/*------------------------------------*\ Main.css
+\*------------------------------------*/
+/** Contents: ------------- #Globals............Basic Settigns and Configurations #Generals...........General Styles: Shared, Normalize,Grid etc.. #Base.............. #Components & Modules........... #Templates/Layout........... #Pages........... #Utilities..........Most specific classes, usually marked with `!important`, always comes last because these override! */
+/*------------------------------------*\ #Global
+\*------------------------------------*/
+/** Contents: --------- #Global settings: - Theme colors,  - button colors,  - link colors,  - background-colors,  - border colors,  - nav colors, - sizing variables,  - layout variables,  - z-index/positioning variables.
+ #typography settings: - custom fonts, - Font stacks,  - basic font sizes/settings,   - utility classes. */
+/** #Global Settings: ----------------- */
+/** #colors: --------- */
+/** #links: -------- */
+/** #buttons: ---------- */
+/** #Typography: ------------- */
+/** ##font settings */
+/** ##Heading Sizes h1-h6 */
+/** Convert px to Em units ---------------------- */
+/**  Using Sass' unitless() method: This allows us to either include the px unit or not in the function call.
+ https://css-tricks.com/snippets/sass/px-to-em-functions/  http://sass-lang.com/documentation/Sass/Script/Functions.html#unitless-instance_method http://web-design-weekly.com/snippets/converts-pixels-to-ems-with-sass/
+ h1 { font-size: em(32); } // is the same as: h1 { font-size: em(32px); } */
+/** Text Wrap --------- */
+/** Box Model Stuff --------------- */
+/** Opacity ------- */
+/** Transitions/Animations ---------------------- */
+/*------------------------------------*\ #General
+\*------------------------------------*/
+/*------------------------------------*\ Normalize / Reset
+\*------------------------------------*/
+/** Custom modified version of normalize.css You can find the original here: http://necolas.github.io/normalize.css/ */
+/** CONTENTS: ~ Reset...............Basic reset of defaults ~ Typography................Basic Type elements ~ Code/Preformatted................Computer related/generated content */
+/*------------------------------------*\ ~ Reset
+\*------------------------------------*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { border: 0; margin: 0; padding: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+
+/* HTML5 display definitions Correct `block` display not defined in IE 8/9. */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary { display: block; }
+
+html { box-sizing: border-box; }
+
+body { margin: 0; /* Remove default margin. */ background: #fafafa; /* Default bg */ }
+
+/* Address styling not present in IE 8/9. */
+[hidden] { display: none; }
+
+/* Address differences between Firefox and other browsers. */
+hr { -moz-box-sizing: content-box; box-sizing: content-box; height: 0; overflow: hidden; border-top: 0 none; border-left: 0 none; border-right: 0 none; border-bottom: 1px solid #CCC; }
+
+/*------------------------------------*\ ~ Typography
+\*------------------------------------*/
+/* Address styling not present in IE 8/9, Safari 5, and Chrome. */
+abbr[title] { border-bottom: 1px dotted; }
+
+/* Address styling not present in Safari 5 and Chrome. */
+dfn { font-style: italic; }
+
+/* Address styling not present in IE 8/9. */
+mark { background: #ff0; color: #000; }
+
+/*------------------------------------*\ ~ Code / Preformated
+\*------------------------------------*/
+/* Correct font family set oddly in Safari 5 and Chrome. */
+code, kbd, pre, samp { font-family: monospace, serif; font-size: 1em; }
+
+/* Improve readability of pre-formatted text in all browsers. */
+pre { white-space: pre-wrap; }
+
+/*------------------------------------*\ Clearfix 
+\*------------------------------------*/
+/* For modern browsers 1. The space content is one way to avoid an Opera bug when the `contenteditable` attribute is included anywhere else in the document. Otherwise it causes space to appear at the top and bottom of elements that receive the `clearfix` class. 2. The use of `table` rather than `block` is only necessary if using `:before` to contain the top-margins of child elements. */
+/**
+* Micro clearfix, as per: css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
+*/
+.clearfix { /* trigger hasLayout and contain floats For IE 6/7 only */ *zoom: 1; }
+.clearfix:before, .clearfix:after { content: ''; display: table; }
+.clearfix:after { clear: both; }
+
+/*------------------------------------*\ Shared / Common 
+\*------------------------------------*/
+/** Common Sitewide styles shared by multiple components elements, etc.. */
+/*  <html> font size 100% for type scale consistancy.  (100% = 16px, Default browser type size) ~ Already declared within "general/_normalize_reset",  */
+/*  force form controls and table cells to inherit the correct `font-size`  (mainly to cater for IE/Win)  */
+/* Give all elements Accurate Box sizing */
+*, *:before, *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+/* 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio` and `video` controls. 2. Correct inability to style clickable `input` types in iOS. 3. Improve usability and consistency of cursor style between image-type `input` and others.
+*/
+button, html input[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearance: button; /* 2 */ cursor: pointer; /* 3 */ }
+
+/* 1. Correct font family not being inherited in all browsers. 2. Correct font size not being inherited in all browsers. 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+*/
+button, input, select, textarea { font-family: inherit; font-size: 100%; margin: 0; }
+
+/* Address Firefox 4+ setting `line-height` on `input` using `!important` in the UA stylesheet.
+*/
+button, input { line-height: normal; }
+
+/* Address inconsistent `text-transform` inheritance for `button` and `select`. All other form control elements do not inherit `text-transform` values. Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+. Correct `select` style inheritance in Firefox 4+ and Opera.
+*/
+button, select { text-transform: none; }
+
+/* Re-set default cursor for disabled elements. */
+button[disabled], html input[disabled] { cursor: default; }
+
+/* Remove inner padding and border in Firefox 4+. */
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+
+/* -Correct `inline-block` display not defined in IE 8/9. */
+audio, canvas, video { display: inline-block; }
+
+/* 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio` and `video` controls. 2. Correct inability to style clickable `input` types in iOS. 3. Improve usability and consistency of cursor style between image-type `input` and others. */
+button, html input[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearance: button; /* 2 */ cursor: pointer; /* 3 */ }
+
+/* 1. Address box sizing set to `content-box` in IE 8/9. 2. Remove excess padding in IE 8/9. */
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; /* 1 */ padding: 0; /* 2 */ }
+
+textarea, input, button, .button, .pager-nav li a, .load-post-button { border: 1px solid #ccc; /* 0.1em = 1px */ font-size: 100%; line-height: 1.125; }
+
+label, input, button, .button, .pager-nav li a, .load-post-button { display: inline-block; }
+
+/*  Apply global element vertical spacing 
+*/
+img, p, label, input, textarea, button, table, ul, ol, dl, .button, .pager-nav li a, .load-post-button { /* global vertical spacing */ margin: 0 0 1.125em; }
+
+/*------------------------------------*\ #Base
+\*------------------------------------*/
+/*------------------------------------*\ #Global Links
+\*------------------------------------*/
+/** Global link Styles ------------------ */
+a { color: #1779ba; }
+a:hover, a:active, a:focus { color: #136196; text-decoration: none; }
+
+/*------------------------------------*\ Typography
+\*------------------------------------*/
+/** Global base type styles  The Typographic system is built using a `modular scale` */
+/** Resources for scaleable type: 1) http://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights/ 2) http://clagnut.com/blog/348 3) http://alistapart.com/article/more-meaningful-typography */
+/* Scale type with viewport: font-size: calc(0.75em + 1vw);
+*/
+html { /** Firefox 3, Safari 5+, and Chrome 4+,  this property-value pair enables a font’s native kerning instructions  */ text-rendering: optimizeLegibility; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 100%; /* set default 16px */ }
+
+body { font-weight: normal; font-style: normal; font-family: courier, "Helvetica New", Helvetica, sans-serif; font-size: 100%; line-height: 1.5; color: #232323; /** Better Type rendering, removes `auto` bolding.  Text on dark background will appear thinner because of antialiasing.
+*/ -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+input, textarea, button, select, th, td { font-size: 100%; }
+
+/* Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome. */
+b, strong { font-weight: bold; }
+
+cite, small { font-size: 0.75em; }
+
+cite, em { font-style: italic; }
+
+/* Prevent `sub` and `sup` affecting `line-height` in all browsers. */
+sub, sup { position: relative; font-size: 0.75em; line-height: 0; vertical-align: baseline; }
+
+sup { top: -0.5em; }
+
+sub { bottom: -0.25em; }
+
+/* Set consistent quote types. */
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+
+blockquote, q { quotes: "\201C" "\201D" "\2018" "\2019"; }
+
+blockquote cite:before { content: "\2014 \0020"; }
+
+blockquote { padding: 3% 6%; margin-bottom: 3%; border-top: 3px solid #ccc; border-bottom: 3px solid #ccc; font-family: georgia, serif; }
+blockquote > p { margin: 0; }
+
+/** Text Size Classes  ------------------------- Range: 12px–36px */
+.text-size-12 { font-size: 0.75em; /* 12px */ }
+
+.text-size-14 { font-size: 0.875em; /* 14px */ }
+
+.text-size-16 { font-size: 1em; /* 16px */ }
+
+.text-size-18 { font-size: 1.125em; /* 18px */ }
+
+.text-size-22 { font-size: 1.375em; /* 22px */ }
+
+.text-size-28 { font-size: 1.75em; /* 28px */ }
+
+.text-size-36 { font-size: 2.25em; /* 36px */ }
+
+/** Text Styles / Utility Classes -------------------------------- */
+.serif-font { font-family: georgia, serif; }
+
+.text-line { display: block; }
+
+/* make text look like a form label el */
+.text-label { margin: 0 0 0.5em; font-weight: bold; font-size: 1em; }
+
+/*------------------------------------*\ Headings
+\*------------------------------------*/
+/** As per: csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css  When we define a heading we also define a corresponding class to go with it. This allows us to apply, say, `class=alpha` to a `h3`; a double-stranded heading hierarchy. */
+h1, h2, h3, h4, h5, h6 { margin: 1.125em 0 0.5em; font-weight: bold; line-height: 1.25; text-transform: uppercase; }
+
+/** Heading Sizes (1-6) ---------------------------- Range: 14px–32px */
+h1, .h--alpha { font-size: 2em; }
+
+h2, .h--beta { font-size: 1.75em; }
+
+h3, .h--gamma { font-size: 1.375em; }
+
+h4, .h--delta { font-size: 1.125em; }
+
+h5, .h--epsilon { font-size: 1em; }
+
+h6, .h--zeta { font-size: 0.875em; }
+
+/*------------------------------------*\ Lists
+\*------------------------------------*/
+/** !LISTS: Basic list elements and  extendable list classes vertical spacing for all lists  ul,ol,dl set in /general/_shared.scss `.item` is an optional class, and should be applied to the child <li> elements. */
+dd, dd:last-child, dt, li { margin: 0; }
+
+ul, ol, dl { padding-left: 1.25em; }
+
+ul, ol { list-style: outside; /* Better list formating */ }
+
+ol { /* Add Numbers for ordered lists */ list-style: decimal inside; }
+
+li { /* Basic list Default vertical padding */ padding: 0.5em 0; }
+
+dt, dd { margin-bottom: 0.5em; }
+
+dt { font-weight: bold; }
+
+dd { margin-bottom: 0.75em; }
+
+/** List Component Classes  */
+/** Unstyled: --------- Resets default list styles */
+.list--unstyled, .list--inline, .pager-nav, .list--stacked { list-style: none; padding: 0; margin: 0; }
+.list--unstyled li, .list--inline li, .pager-nav li, .list--stacked li, .list--unstyled dt, .list--inline dt, .pager-nav dt, .list--stacked dt, .list--unstyled dd, .list--inline dd, .pager-nav dd, .list--stacked dd, .list--unstyled .list__item, .list--inline .list__item, .pager-nav .list__item, .list--stacked .list__item { margin: 0; padding: 0; }
+
+/** Forces horiztonal / vertical / inline alignment of list items. */
+.list--inline li, .pager-nav li, .list--inline .list__item, .pager-nav .list__item, .list--horizontal li, .list--horizontal .list__item { display: table-cell; vertical-align: middle; padding: 0.25em 0.5em; }
+
+.list--horizontal li, .list--horizontal .list__item { display: table-cell; }
+
+.list--stacked li, .list--stacked .list__item { display: block; vertical-align: middle; /* Better alignment */ }
+
+/*------------------------------------*\ Tables
+\*------------------------------------*/
+table { width: 100%; /* Remove most spacing between table cells. */ border-collapse: collapse; border-spacing: 0; /* Hides empty data */ empty-cells: hide; }
+
+/* Generic Styling for Desktops/Laptops */
+th { font-weight: bold; }
+
+td, th { padding: 0.25em 0.5em; border: 1px solid #ccc; text-align: left; }
+
+/* Table wrap utility */
+.table-wrap { width: 100%; max-width: 500px; margin: 5% auto; }
+
+/* Zebra striping */
+tr:nth-of-type(even) { background: #eee; }
+
+/*------------------------------------*\ BUTTONS
+\*------------------------------------*/
+/** Default Buttons --------------- Button appearance sizes (paddings, Margins) are based from font size. Default bottom margin is applied in /general/_shared.scss
+*/
+button, input[type="submit"], input[type="reset"], input[type="button"], .button, .pager-nav li a, .load-post-button { padding: 0.75em 1.125em; cursor: pointer; vertical-align: baseline; text-decoration: none; text-align: center; text-transform: capitalize; background: #323232; color: #fafafa; border: 0 none; opacity: 1 !important; /* overrides any <a> link opcaity styles */ /** Default Button States --------------------- <a> link buttons inherit link color by default
+*/     /** Disabled Button: ----------------
+ Refrence Disabled styles: Foundation buttons:  https://github.com/zurb/foundation-sites/blob/master/scss/components/_button.scss */ }
+button:hover, button:focus, input[type="submit"]:hover, input[type="submit"]:focus, input[type="reset"]:hover, input[type="reset"]:focus, input[type="button"]:hover, input[type="button"]:focus, .button:hover, .pager-nav li a:hover, .load-post-button:hover, .button:focus, .pager-nav li a:focus, .load-post-button:focus { background: #3f3f3f; border-color: 0 none; color: #fafafa; opacity: 1 !important; /* overrides any <a> link opcaity styles */ }
+button.is--disabled, input[type="submit"].is--disabled, input[type="reset"].is--disabled, input[type="button"].is--disabled, .button.is--disabled, .pager-nav li a.is--disabled, .is--disabled.load-post-button { cursor: not-allowed; pointer-events: none; background-color: #F2F1EF; border-color: #ccc; color: #aaa; /** Because filter: opacity value must not have decimal (ex: 50),  we will do some math, $opacity * 100 = whole number.   */ *zoom: 1 !important; /* Required for IE 5, 6, 7, trigger hasLayout */ filter: alpha(opacity=3000); /* This works in IE 8 & 9, but also 5, 6, 7  too */ -moz-opacity: 30; /* Older than Firefox 0.9 */ opacity: 30; /* Current */ }
+
+/** #Custom Button Styles Here!!! */
+/*------------------------------------*\ Forms / Inputs
+\*------------------------------------*/
+/** Default Form and Input Elements and associated input elements such as labels Excludes all "Button" input types, those are included in ('base/_buttons.scss') */
+/* 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome. 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome (include `-moz` to future-proof). */
+textarea, input, input[type="search"] { -webkit-appearance: textfield; /* 1 */ -moz-box-sizing: border-box; -webkit-box-sizing: border-box; /* 2 */ box-sizing: border-box; }
+
+textarea, input { margin: 0 0 1em; padding: 0.5em; outline: none; line-height: 1; vertical-align: baseline; border: 1px solid #ccc; }
+
+form, textarea { display: block; }
+
+/* Remove inner padding and search cancel button in Safari 5 and Chrome on OS X. */
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+
+/* Define consistent border, margin, and padding. */
+fieldset { border: 1px solid #c0c0c0; margin: 0 2px; padding: 0.35em 0.625em 0.75em; }
+
+label { display: inline-block; margin: 0 0 0.5em; font-weight: bold; font-size: 1em; }
+
+/** 1. Correct `color` not being inherited in IE 8/9. 2. Remove padding so people aren't caught out if they zero out fieldsets. */
+legend { border: 0; /* 1 */ padding: 0; /* 2 */ }
+
+/** 1. Remove default vertical scrollbar in IE 8/9. 2. Improve readability and alignment in all browsers. */
+textarea { overflow: auto; /* 1 */ vertical-align: top; /* 2 */ }
+
+/** Action States */
+label:hover { cursor: pointer; }
+
+input, textarea { /* remember to define focus styles! */ }
+input:hover, input:focus, textarea:hover, textarea:focus { outline: none; border-color: #aaa; }
+
+/*------------------------------------*\ Images & figures
+\*------------------------------------*/
+/* Address margin not present in IE 8/9 and Safari 5. */
+figure { display: block; margin: 0; }
+
+img { display: block; border: 0; /* Remove border when inside `a` element in IE 8/9. */ max-width: 100%; /* Restricts image scaling to max original width */ height: auto; /* Consistant img rendering quality for IE */ -ms-interpolation-mode: bicubic; }
+
+/** FILL IMAGE: Simply fills the image to the fill the width of its parent container    */
+.img--fill { width: 100% !important; max-width: none !important; }
+
+/*------------------------------------*\ SVG 
+\*------------------------------------*/
+/* Correct overflow displayed oddly in IE 9. */
+svg:not(:root) { overflow: hidden; }
+
+/*------------------------------------*\ #Components & Modules
+\*------------------------------------*/
+/** Components are the smallest most single reusable parts of a site / design. Modules are made up of multiple "components" to form larger units.
+ Despite the differences both types of files are place within the "modules" directory and prefixed _mod_ */
+/** ##Modules (Atoms)
+ Smallest independant and most reusable parts. */
+/* Custom buttons such as link style buttons, outlined buttons, reverse buttons, etc... */
+/*------------------------------------*\ # Button Modules and classes
+\*------------------------------------*/
+/** Extend button styles with .button class !default buton settings defined in 'globals/_defaults.scss' */
+.button, .pager-nav li a, .load-post-button { /* Add round corners */ border-radius: 0; background-clip: border-box; }
+
+/** ## Button Sizes */
+.button.button--small, .pager-nav li a.button--small, .button--small.load-post-button { padding: 0.5em 0.75em; font-size: 75%; }
+
+/** ## Button Styles (outline, solid, primary, etc..) */
+.button.button--outline, .pager-nav li a.button--outline, .button--outline.load-post-button { background: 0 none !important; border: 1px solid #ccc; color: #ccc; }
+.button.button--outline:hover, .pager-nav li a.button--outline:hover, .button--outline.load-post-button:hover, .button.button--outline:focus, .pager-nav li a.button--outline:focus, .button--outline.load-post-button:focus { /* override default button input styles */ background: #333 !important; border: 1px solid transparent !important; color: #fefefe; }
+
+.button.button--outline.button--light, .pager-nav li a.button--outline.button--light, .button--outline.button--light.load-post-button { border-color: #FDFFE2; color: #FDFFE2; }
+.button.button--outline.button--light:hover, .pager-nav li a.button--outline.button--light:hover, .button--outline.button--light.load-post-button:hover, .button.button--outline.button--light:focus, .pager-nav li a.button--outline.button--light:focus, .button--outline.button--light.load-post-button:focus { /* override default button input styles */ background-color: #FDFFE2 !important; color: #261D1D; }
+
+/** Force button to look like a link <a> ------------------------------------ Extend with your custom styles! */
+.button.button--link, .pager-nav li a.button--link, .button--link.load-post-button { border: 0 none !important; background: 0 none !important; }
+
+.page-sec { padding: 2rem 0; }
+
+@media screen and (min-width: 768px) { .page-sec { padding: 3rem 0; } }
+.content, .graphic-el { max-width: 40rem; margin: auto; padding: 2rem; }
+
+.graphic-el { width: 100%; padding: 0; }
+
+/* .btn-container parent el for .scroll-btn */
+.btn-container { /* center btn for mobile */ text-align: center; }
+
+.scroll-btn { position: relative; margin: 2rem auto; }
+
+@media screen and (min-width: 1140px) { .btn-container { /* reset center alignment of btn */ text-align: left; }
+  .scroll-btn { /* add left indent from content edge */ margin: 0 0 0 5%; -webkit-transform: translateY(75%); -moz-transform: translateY(75%); -o-transform: translateY(75%); -ms-transform: translateY(75%); transform: translateY(75%); /* apply pos from center of obj */ } }
+/** Pagination and Controls */
+/* Needs to override @extend rules */
+.pager-nav, .load-post-button { margin: 2rem auto; }
+
+.pager-nav .active > a, .pager-nav .is--active > a { /* !important Override styles and @extends */ opacity: 0.35 !important; }
+
+.current-page { line-height: 1; }
+
+.loadmore-button { width: 100%; max-width: 360px; margin: 2rem auto; }
+
+/** ##Compnents (Molecules) Larger units composed of smaller modules or even other components. */
+/*------------------------------------*\ #Layout
+\*------------------------------------*/
+/** All layout files are contained in 'layout' directory. Flexbox layout files are prefixed with flex_ Example: flex_layout-name Flexbox layout classes are also prefixed with 'flex-' Example: .flex-layout-name */
+.container { width: 90%; margin: auto; }
+
+@media screen and (min-width: 1140px) { /* modernizer detect */
+  .flexbox { /* parent flex element */ /* child flex element 
+.flex-item {} */ }
+  .flexbox .flex-container { display: flex; flex-direction: row-reverse; justify-content: space-around; align-items: center; min-height: 100vh; } }
+/* Image Grid */
+.grid { max-width: 90%; margin: auto; }
+
+/* list view of grid items, full width of parent container */
+.grid--list .grid__item { width: 100%; max-width: 800px; /* DO NOT exceed natural width of image. */ margin: 0 auto 2.5rem; /* auto center each item */ text-align: center; /* center caption with image */ }
+
+.grid__item.size--vert > img { max-width: 80%; height: auto; margin: 0 auto 1.125em; }
+
+@media screen and (min-width: 1020px) { .grid { max-width: 100%; }
+  /* 2col grid */
+  .grid--columns .grid__item { /* use calc to subtract gutter width */ max-width: calc( 50% - 30px ); }
+  .grid__item.size--vert > img { width: auto; height: 80%; } }
+@media screen and (min-width: 1440px) { /* 3col grid */
+  .grid__item { max-width: calc( 33.33% - 30px); } }
+/** ##Layout Templates
+ Contains styles relating to specific layout/design: sidebar page, single col page, etc... */
+/*------------------------------------*\ #Pages
+\*------------------------------------*/
+/** Specific styles relating to individual Page templates / views such as: About, contact, company history, etc... */
+/*------------------------------------*\ #Custom Theming
+\*------------------------------------*/
+/** General themeing styles only!!!
+ Specific theming for components, templates, etc..  should be applied at the end of the related styles.  */
+/* Global dark theme colors */
+.is--dark { background-color: #261D1D; color: #fefefe; /* Dark Theme Link Styles */ }
+.is--dark a, .is--dark a:hover, .is--dark a:focus { color: #FDFFE2; }
+.is--dark a:hover, .is--dark a:focus { /* if opacity not supported, will default to normal */ opacity: 0.65; }
+
+/*------------------------------------*\ #Utilities/Helpers
+\*------------------------------------*/
+/** Includes Most Specific styles, marked with `!important` and ment to override other styles. Should always come last!!! */
+/*------------------------------------*\ Helpers / Utilities
+\*------------------------------------*/
+/** A series of helper classes to use arbitrarily. Only use a helper class if an element/component doesn’t already have a class to which you could apply this styling, e.g. if you need to float `.main-nav` left then add `float:left;` to that ruleset as opposed to adding the `.float--left` class to the markup.  A lot of these classes carry `!important` as you will always want them to win out over other selectors. */
+/**
+*  Force Block Level elements
+*  !important Override all base styles including :hover, :active, :focus, etc..
+*/
+.display--block { display: block !important; width: 100%; /* span full width */ }
+
+/**
+* Add/remove floats
+*/
+.float--right { float: right !important; }
+
+.float--left { float: left !important; }
+
+.float--none { float: none !important; }
+
+/** Add/remove Margin */
+.remove--top { margin-top: 0 !important; }
+
+.remove--bottom { margin-bottom: 0 !important; }
+
+.remove--left { margin-left: 0 !important; }
+
+.remove--right { margin-right: 0 !important; }
+
+/** Text alignment */
+.align--left { text-align: left  !important; }
+
+.align--center { text-align: center !important; }
+
+.align--right { text-align: right !important; }
+
+/** Font weights  We will use keywords "noirmal,bold, etc.." instead of "200,600, etc.." because some fonts have different values and this is a simpler solution. */
+.weight--light { font-weight: lighter !important; }
+
+.weight--normal { font-weight: normal !important; }
+
+.weight--bold { font-weight: bold !important; }
+
+/** Font Styles  */
+.style--italic { font-style: italic !important; }
+
+/** Apply capital case to an element (usually a `strong`). */
+.allcaps { text-transform: uppercase !important; }
+
+/** Antialiased Text Removes `auto` bolding on light text over dark background */
+.antialiased { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+.hidden { display: none !important; visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+/** Add a help cursor to any element that gives the user extra information on `:hover`. */
+.informative { cursor: help !important; }
+
+/** Align items to the right where they imply progression/movement forward, e.g.:  <p class=proceed><a href=#>Read more...</a></p>  */
+.proceed { text-align: right !important; }
+
+/** Add a right-angled quote to links that imply movement, e.g.:  <a href=# class=go>Read more</a>  */
+.go:after { content: " " "»" !important; }
+
+/** Responsive Display */
+.tablet, .desktop { display: none; }
+
+.mobile { display: block; }
+
+@media screen and (min-width: 768px) { .mobile, .desktop { display: none; }
+  .tablet { display: block; } }
+@media screen and (min-width: 992px) { .mobile, .tablet { display: none; }
+  .desktop { display: block; } }
+/** ##Wordpress Specific classes and helpers */
+/** Absolute vertical centering (Y axis)  translateY -50% improves centering point for more accurate centering. */
+.center--Y { position: absolute; top: 50%; left: -50%; right: -50%; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -o-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); /* apply pos from center of obj */ }

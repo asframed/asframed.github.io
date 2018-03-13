@@ -1,0 +1,15 @@
+{
+    "quotes": [
+        { 
+            "quote": "Genius is making complex ideas simple.", 
+            "author": "Albert Einstein",
+            "image": "assets/svg/quote_nameofquote.svg"
+        },
+
+        {
+            "quote": "Design is how it works.",
+            "author": "Steve Jobs",
+            "image": "assets/svg/quote_stevejobs.svg" 
+        }
+    ]
+}

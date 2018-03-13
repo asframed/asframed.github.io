@@ -1,0 +1,334 @@
+/*------------------------------------*\
+    Main.css
+\*------------------------------------*/
+
+/**
+  Contents:
+  -------------
+    #Globals............Basic Settigns and Configurations
+    #Generals...........General Styles: Shared, Normalize,Grid etc..
+    #Base..............
+    #Components & Modules...........
+    #Templates/Layout...........
+    #Pages...........
+    #Utilities..........Most specific classes, usually marked with `!important`, always comes last because these override!
+ */
+
+
+/*------------------------------------*\
+    #Global
+\*------------------------------------*/
+
+@import "global/defaults"; // global settings and vars
+@import "global/functions";
+@import "global/mixins";
+// @import "global/media_queries";
+
+
+/*------------------------------------*\
+    #General
+\*------------------------------------*/
+
+@import "general/normalize_reset";
+@import "general/clearfix";
+@import "general/shared";
+// @import "general/grid";
+
+
+/*------------------------------------*\
+    #Base
+\*------------------------------------*/
+
+@import "base/links";      
+@import "base/typography";  
+@import "base/headings"; 
+@import "base/lists";
+@import "base/tables";
+@import "base/buttons";
+@import "base/forms";
+@import "base/images";  
+@import "base/svg";  
+
+/*------------------------------------*\
+    #Components & Modules
+\*------------------------------------*/
+
+/**
+    Components are the smallest most single reusable parts of a site / design.
+    Modules are made up of multiple "components" to form larger units.
+
+    Despite the differences both types of files are place within the "modules"
+      directory and prefixed _mod_
+ */
+
+
+/**
+    ##Modules (Atoms)
+
+    Smallest independant and most reusable parts.
+ */
+
+// @import "modules/mod_badges";
+// @import "modules/mod_items-list"; DELETE FILE !!!!
+// @import "modules/mod_nav-list";
+// @import "modules/mod_media-object";
+
+/* Custom buttons such as link style buttons, outlined buttons, reverse buttons, etc... */
+@import "modules/mod_buttons";
+
+.page-sec {
+    padding: 2rem 0;
+}
+
+@media screen and (min-width: 768px) {
+    .page-sec {
+        padding: 3rem 0;
+    }
+}
+
+.content,
+.graphic-el {
+    max-width: 40rem; margin: auto; padding: 2rem;
+}
+
+.graphic-el {
+    width: 100%; padding: 0;
+}
+
+
+/* .btn-container parent el for .scroll-btn */
+.btn-container {
+    /* center btn for mobile */
+    text-align: center;
+}
+
+.scroll-btn {
+    position: relative; margin: 2rem auto; }
+
+@media screen and (min-width: 1140px) {
+    .btn-container {
+        /* reset center alignment of btn */
+        text-align: left;
+    }
+
+    .scroll-btn {
+        /* add left indent from content edge */
+        margin: 0 0 0 5%;
+        @include translateY(75%); /* apply pos from center of obj */ 
+    }
+
+}
+
+
+/**
+ *  Pagination and Controls
+ */
+
+
+.pager-nav {
+  @extend .list--inline;
+}
+
+.pager-nav li a,
+.load-post-button {
+  @extend .button;
+}
+
+/* Needs to override @extend rules */
+.pager-nav,
+.load-post-button {
+  margin: 2rem auto;
+}
+
+.pager-nav {
+
+  .active > a,
+  .is--active > a {
+    /* !important Override styles and @extends */
+    opacity: 0.35 !important; 
+  }
+
+}
+
+.current-page {
+  line-height: 1;
+}
+
+.loadmore-button {
+  width: 100%;
+  max-width: 360px; 
+  margin: 2rem auto;
+}
+
+
+
+/**
+    ##Compnents (Molecules)
+    Larger units composed of smaller modules or even other components.
+ */
+
+
+/*------------------------------------*\
+    #Layout
+\*------------------------------------*/
+
+/**
+    All layout files are contained in 'layout' directory.
+    Flexbox layout files are prefixed with flex_
+         Example: flex_layout-name
+    Flexbox layout classes are also prefixed with 'flex-'
+         Example: .flex-layout-name
+ */
+
+
+.container {
+    width: 90%; margin: auto;
+}
+
+@media screen and (min-width: 1140px) {
+    /* modernizer detect */
+    .flexbox {
+
+        /* parent flex element */
+        .flex-container {
+            display: flex; flex-direction: row-reverse; justify-content: space-around;
+            align-items: center; min-height: 100vh;
+        }
+
+        /* child flex element 
+        .flex-item {} */
+
+    }
+}
+
+
+/* Image Grid */
+.grid {
+    max-width: 90%; margin: auto;
+}
+
+/* list view of grid items, full width of parent container */
+.grid--list {
+
+    .grid__item {
+        width: 100%; 
+        max-width: 800px; /* DO NOT exceed natural width of image. */
+        margin: 0 auto 2.5rem; /* auto center each item */
+        text-align: center; /* center caption with image */
+    }
+}
+
+.grid__item.size--vert {
+
+    > img {
+        max-width: 80%;
+        height: auto;
+        margin: 0 auto $vert-spacing;
+    }
+}
+
+@media screen and (min-width: 1020px) {
+
+    .grid {
+        max-width: 100%;
+    }
+
+    /* 2col grid */
+    .grid--columns .grid__item {
+        /* use calc to subtract gutter width */
+        max-width: calc( 50% - 30px );
+    }
+
+    .grid__item.size--vert > img {
+        width: auto;
+        height: 80%;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    /* 3col grid */
+    .grid__item {
+        max-width: calc( 33.33% - 30px);
+    }
+}
+
+
+/**
+    ##Layout Templates
+
+    Contains styles relating to specific layout/design:
+      sidebar page, single col page, etc...
+ */
+
+
+/*------------------------------------*\
+    #Pages
+\*------------------------------------*/
+
+/**
+    Specific styles relating to individual Page templates / views such as:
+      About, contact, company history, etc...
+ */
+
+
+/*------------------------------------*\
+    #Custom Theming
+\*------------------------------------*/
+
+/**
+    General themeing styles only!!!
+
+    Specific theming for components, templates, etc.. 
+      should be applied at the end of the related styles. 
+ */
+
+/* Global dark theme colors */
+.is--dark {
+    background-color: $lighter-black;
+    color: #fefefe;
+
+    /* Dark Theme Link Styles */
+
+    a,
+    a:hover,
+    a:focus {
+        color: $cream;
+    }
+
+    a:hover,
+    a:focus {
+        /* if opacity not supported, will default to normal */
+        opacity: 0.65; 
+    }
+
+}
+
+
+/*------------------------------------*\
+    #Utilities/Helpers
+\*------------------------------------*/
+
+/**
+    Includes Most Specific styles, marked with `!important` and ment to override other styles.
+    Should always come last!!!
+ */
+
+@import "general/helper_utility";
+
+
+/**
+    ##Wordpress Specific classes and helpers
+ */
+
+// @import "general/wp_classes";
+
+
+/**
+    Absolute vertical centering (Y axis) 
+    translateY -50% improves centering point for more accurate centering.
+ */
+.center--Y {
+    position: absolute; top: 50%; left: -50%; right: -50%;
+    @include translateY(-50%); /* apply pos from center of obj */ }
+
+

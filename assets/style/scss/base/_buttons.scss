@@ -1,0 +1,95 @@
+/*------------------------------------*\
+    BUTTONS
+\*------------------------------------*/
+
+// foundation buttons refrence:
+// https://github.com/zurb/foundation-sites/blob/master/scss/components/_button.scss
+
+
+// global settings:
+// Custom Button settings
+// default settings defined 'globals/_defaults.scss'
+// $btn-border Defaults to 0 none
+
+// uncomment to ovveride defaults
+// $btn-background: '';
+// $btn-text-color: '';
+// $btn-hover-background:  lighten('', 05%);
+
+/**
+  Default Buttons
+  ---------------
+  Button appearance sizes (paddings, Margins) are based from font size.
+  Default bottom margin is applied in /general/_shared.scss
+*/  
+
+// !defaults defined 'globals/_defaults.scss'
+
+button, 
+input[type="submit"], 
+input[type="reset"], 
+input[type="button"],
+.button {
+
+    // <a> Link buttons inherits link color by default
+    padding: 0.75em 1.125em; 
+    cursor: pointer; 
+
+    vertical-align: baseline;
+    text-decoration: none; 
+    text-align: center; 
+    text-transform: capitalize;
+
+    background: $btn-background;
+    color: $btn-text-color;
+    border: $btn-border; 
+    opacity: 1 !important; /* overrides any <a> link opcaity styles */
+
+
+    /**
+      Default Button States
+      ---------------------
+      <a> link buttons inherit link color by default
+    */  
+
+    &:hover,
+    &:focus {
+        background: $btn-hover-background;
+        border-color: $btn-hover-border;
+        color: $btn-hover-text-color;
+        opacity: 1 !important; /* overrides any <a> link opcaity styles */
+
+    }
+
+
+    /**
+        Disabled Button:
+        ----------------
+
+        Refrence Disabled styles:
+          Foundation buttons: 
+          https://github.com/zurb/foundation-sites/blob/master/scss/components/_button.scss
+     */ 
+    &.is--disabled {
+     // foundation stuff
+      cursor: not-allowed;
+      pointer-events: none;
+
+      background-color: #F2F1EF;
+      border-color: #ccc;
+      color: #aaa;
+      @include opacity(30);
+    }
+
+
+    // active / (Clicked)
+    &:active,
+    &.is--active {}
+
+
+} 
+
+
+/**
+ *  #Custom Button Styles Here!!!
+ */

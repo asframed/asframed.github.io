@@ -1,0 +1,36 @@
+/*------------------------------------*\
+    Video Embed
+\*------------------------------------*/
+
+/**
+ *  Creates responsize video / embeds.
+ *  We will wrap each video object within '.video-wrapper'
+ *  div  
+ */
+
+
+.video-wrapper {
+
+    display: block;
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    padding-bottom: 56.25%; // 16x9 aspect ratio
+
+    .video,
+    .youtube-player,
+    iframe, embed, object {
+            
+        border: 0 none;
+        bottom: 0;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+
+    } 
+
+
+}

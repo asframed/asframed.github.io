@@ -1,0 +1,37 @@
+/*------------------------------------*\
+    Flexbox Holy Grail Layout
+\*------------------------------------*/
+
+.flex-holy-grail {
+    // @extend .flex-container; 
+
+    @media screen and (min-width: 979px) {
+
+        display: flex;
+        /* 1 value: fills empty space, pushes footer to bottom of window/page. AUTO value: insures if window is smaller than content the min height is equal to amount of content so footer will always be below the content or at bottom of window */
+        flex: 1 0 auto; /* grow | shrink | basis */
+        flex-direction: row; /* display elements LTR */ 
+
+
+        /* flexbox main content section  */
+         .flex-content {
+            flex: 2 0 0; /* grow | shrink | basis, Larger column width */
+            /* because our markup structure, we need reorder the elements display */
+            order: 2; /* place element between sidebars (i.e. 2nd element) */
+         }
+
+        /* flexbox content sidebars */
+         .flex-sidebar {
+            flex: 1 0 0; /* grow | shrink | basis */
+         }
+
+        /* sidebar Right */
+        .flex-sidebar:nth-child(3) {
+            /* because our markup structure, we need reorder the elements display */
+            order: 3; /* move to right side (i.e. 3rd element )*/
+            background: #eee; /* visual difference */
+        }
+
+    }
+    // end @media 979px
+}

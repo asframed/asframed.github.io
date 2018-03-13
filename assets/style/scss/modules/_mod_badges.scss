@@ -1,0 +1,43 @@
+/*------------------------------------*\
+    Badge Module
+\*------------------------------------*/
+/**
+    .badge creates a colored background and minimal padding that can be used for lables,
+    categories, tags, etc..
+    Can be rounded by applying modifier class .badge--round 
+
+    Can also have a list or grouping of badges with .badge-group
+ */
+
+/**
+ *  #Default .Badge
+ **/
+.badge {
+
+    // default radius 
+    $radius: 0.125em;
+
+    display: inline-block; padding: 0.25em 0.5em;
+    border-radius: $radius; background: $light-grey; background-clip: border-box; 
+    font-size: 86%;
+}
+
+/* remove default list padding */
+ul.badge-group {
+    padding: 0;
+}
+
+/**
+ *  #shape Modifiers
+ */
+
+.badge.badge--round {
+    
+    // Round Circle Radius
+    $radius: 50%;
+    padding: 0.35em 0.5em; border-radius: $radius; }
+
+/**
+ *  #Custom Badge Styles Here!!!
+ */
+

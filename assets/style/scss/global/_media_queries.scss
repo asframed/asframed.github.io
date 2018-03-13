@@ -1,0 +1,35 @@
+// *------------------------------------*
+//  _media_queries.scss
+// *------------------------------------*
+
+/**
+    MINOR BREAKPOINTS:
+    ------------------
+    Are not pre-defined by default as this is up to you.
+    used for more fine-tuned controll / tweaks between MAJOR breakpoints.
+ */
+
+
+/**
+    MAJOR BREAKPOINTS:
+    ------------------
+    These major breakpoint sizes (taken from Hardboiled web design by Andy Clarke)
+    are from the toolkit we’ve developed for our projects at Stuff & Nonsense:
+ */
+
+
+/* 768px/16px (base font size) = 48rem  MAJOR Breakpoint */
+@media (min-width: 48rem) {
+}
+
+/* 1024px/16px (base font size) = 64em  MAJOR Breakpoint */
+@media (min-width: 64em) {
+}
+
+/* 1220px/16px (base font size) = 76.25em  MAJOR Breakpoint */
+@media (min-width: 76.25em) {
+}
+
+/* 1400px/16px (base font size) = 87.5em MAJOR Breakpoint */
+@media (min-width: 87.5em) {
+}

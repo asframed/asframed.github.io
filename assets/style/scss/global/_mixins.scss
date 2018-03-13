@@ -1,0 +1,100 @@
+// *------------------------------------*
+//  _mixins.scss
+// *------------------------------------*
+
+
+/**
+    Text Wrap
+    ---------
+ */
+@mixin text-wrap() {
+    -moz-hyphens:auto; 
+    -ms-hyphens:auto; 
+    -webkit-hyphens:auto; 
+    hyphens:auto; 
+    word-wrap:break-word; }
+
+
+/**
+    Box Model Stuff
+    ---------------
+ */    
+
+// Border radius 
+@mixin border-radius($radius) {
+    background-clip:border-box;
+    -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -o-border-radius: $radius;
+       border-radius: $radius; }
+
+// Box shadow
+@mixin box-shadow($x, $y, $size, $blurr, $color) {
+   -webkit-box-shadow: $x $y $size $blurr $color; 
+    -moz-box-shadow: $x $y $size $blurr $color;
+     -o-box-shadow: $x $y $size $blurr $color; 
+      box-shadow: $x $y $size $blurr $color; }       
+
+
+/**
+    Opacity
+    -------
+ */   
+
+//  Must Pass in $OPACITY value as a decimal ( .75 ) or 1 for 100% .
+//  Example in use: @include opacity(.75);
+@mixin opacity($opacity) {
+
+ /**
+  * Because filter: opacity value must not have decimal (ex: 50), 
+  * we will do some math, $opacity * 100 = whole number.  
+  */
+
+  *zoom: 1 !important; /* Required for IE 5, 6, 7, trigger hasLayout */
+  filter: alpha(opacity= ($opacity*100) ); /* This works in IE 8 & 9, but also 5, 6, 7  too */
+    -moz-opacity: $opacity; /* Older than Firefox 0.9 */
+      opacity: $opacity; /* Current */ }       
+
+  
+
+
+//  Accepts 3 vaulues: x pos, y poz, z pos
+@mixin translate3d($x,$y,$z) {
+  -webkit-transform: translate3d($x,$y,$z); 
+  -moz-transform: translate3d($x,$y,$z); 
+  -o-transform: translate3d($x,$y,$z); 
+  -ms-transform: translate3d($x,$y,$z); 
+  transform: translate3d($x,$y,$z); } 
+
+@mixin translateY($y) {
+  -webkit-transform: translateY($y); 
+  -moz-transform: translateY($y); 
+  -o-transform: translateY($y); 
+  -ms-transform: translateY($y); 
+  transform: translateY($y); } 
+
+
+@mixin translateX($x) {
+  -webkit-transform: translateX($x); 
+  -moz-transform: translateX($x); 
+  -o-transform: translateX($x); 
+  -ms-transform: translateX($x); 
+  transform: translateX($x); } 
+
+
+/**
+    Transitions/Animations
+    ----------------------
+ */  
+
+//
+// [transition-property] [transition-duration] [transition-timing-function] [transition-delay]
+//  For refrence of animatable properties visit: http://www.w3.org/TR/css3-transitions/#animatable-properties
+//  IE10 (the first stable version of IE to support transition) does not require the -ms- prefix.
+//
+
+@mixin transition($trans-property, $trans-duration, $trans-timing, $trans-delay) {
+    -webkit-transition: $trans-property $trans-duration $trans-timing $trans-delay;
+      -moz-transition: $trans-property $trans-duration $trans-timing $trans-delay;
+        -o-transition: $trans-property $trans-duration $trans-timing $trans-delay;
+          transition: $trans-property $trans-duration $trans-timing $trans-delay; }

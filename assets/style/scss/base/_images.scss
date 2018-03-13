@@ -1,0 +1,37 @@
+/*------------------------------------*\
+    Images & figures
+\*------------------------------------*/
+
+/* Address margin not present in IE 8/9 and Safari 5. */
+
+figure {
+    display: block;    
+    margin: 0;
+}
+
+
+img {
+
+    display: block;
+    border: 0;  /* Remove border when inside `a` element in IE 8/9. */
+    max-width: 100%; /* Restricts image scaling to max original width */
+    height: auto;
+
+    /* Consistant img rendering quality for IE */
+    -ms-interpolation-mode: bicubic; 
+}
+
+/**
+ *  FILL IMAGE:
+ *  Simply fills the image to the fill the width of its parent container   
+ */
+
+.img--fill {
+
+    width: 100% !important;
+    max-width: none !important;   
+}
+
+
+
+

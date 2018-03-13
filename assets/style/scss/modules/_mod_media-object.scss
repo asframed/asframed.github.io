@@ -1,0 +1,41 @@
+/*------------------------------------*\
+    #OOCSS Media Object
+    - http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
+\*------------------------------------*/
+
+// global scss settings
+$mediaOb_breakpoint: 480px;
+
+
+.media,
+.media__body {
+  overflow: hidden;
+  _overflow: visible;
+  zoom: 1;
+}
+
+.media__img img,
+.media__img--right img {
+  display: block;
+}
+
+
+@media screen and (min-width: $mediaOb_breakpoint) {
+    .media__img {
+      float: left;
+      margin-right: 1em;
+    }
+}
+
+/**
+    ##Media Object Modifiers
+ */
+
+/* Image on right side */ 
+@media screen and (min-width: $mediaOb_breakpoint) {
+    .media__img--right {
+      float: right;
+      margin-left: 1em;
+    }
+}
+

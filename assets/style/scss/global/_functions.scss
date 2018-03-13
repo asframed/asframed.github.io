@@ -1,0 +1,36 @@
+// *------------------------------------*
+//  _functions.scss
+// *------------------------------------*
+
+/**
+    Convert px to Em units
+    ----------------------
+ */
+
+/** 
+     Using Sass' unitless() method:
+     This allows us to either include the px unit or not in the function call.
+
+     https://css-tricks.com/snippets/sass/px-to-em-functions/ 
+     http://sass-lang.com/documentation/Sass/Script/Functions.html#unitless-instance_method
+     http://web-design-weekly.com/snippets/converts-pixels-to-ems-with-sass/
+
+    h1 { font-size: em(32); }
+    // is the same as:
+    h1 { font-size: em(32px); }
+ */
+
+//  $browser-context value is Default base font size (_defaults.scss)
+$browser-context: 16; // 100% = 16px
+
+@function em($pixels, $context: $browser-context) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1em;
+}

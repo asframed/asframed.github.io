@@ -1,0 +1,142 @@
+// *------------------------------------*
+//  _defaults.scss
+// *------------------------------------*
+
+/**
+    Contents:
+    ---------
+      #Global settings:
+        - Theme colors, 
+        - button colors, 
+        - link colors, 
+        - background-colors, 
+        - border colors, 
+        - nav colors,
+        - sizing variables, 
+        - layout variables, 
+        - z-index/positioning variables.
+
+      #typography settings:
+        - custom fonts,
+        - Font stacks, 
+        - basic font sizes/settings,  
+        - utility classes.
+ */
+
+
+/**
+    #Global Settings:
+    -----------------
+ */
+
+$container-max-width: 1440px;
+
+// consistant vertical spacing / margin
+$vert-spacing: 1.125em;
+
+// apply consistant inner padding for
+// sections and components 
+$global-padding: 1.5em;
+
+
+/**
+    #colors:
+    ---------
+ */
+
+//
+//  #Primary Theme Colors 
+//
+
+$dark-black: #1C1110;
+$lighter-black: #261D1D;
+$warm-dark-grey: #5A4A48;
+$cream: #FDFFE2;
+
+
+//
+//  ## Accent Colors
+//
+
+
+
+
+//
+//  ## Neutrals
+//
+
+$charcoal: #555555;
+$dark-grey: #aaaaaa;
+$grey: #d0d0d0;
+$light-grey: #efefef;
+$off-white: #f5f5f5;
+
+
+//
+//  ## Utitlity Colors
+//
+
+$disabled-grey: #F2F1EF; // CARARRA, Grey
+
+/**
+    #links:
+    --------
+ */
+
+$global-link-color: #1779ba; // light blue 
+$global-link-hover: darken( #1779ba, 8%);
+
+
+/**
+    #buttons:
+    ----------
+ */
+
+//
+//  Default button settings here!!!
+//
+
+// Applied to default .button ('scss/base/_buttons.scss')
+// Default State Settings
+
+$btn-background: #323232 !default;
+$btn-text-color: #fafafa !default;
+$btn-border: 0 none !default;
+
+// :hover & :focus Settings 
+$btn-hover-background:  lighten($btn-background, 05%) !default;
+$btn-hover-text-color: $btn-text-color !default;
+$btn-hover-border: $btn-border !default;
+
+
+/**
+    #Typography:
+    -------------
+ */
+ 
+/**
+    ##font settings
+ */
+
+$asframed-slab-font: courier, "Helvetica New", Helvetica, sans-serif;
+
+$sanserif-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif-font: georgia,serif;
+
+$base-font-family: $asframed-slab-font;
+$base-font-size: 100%; // 1em ~ 16px 
+$base-line-height: 1.5;
+$base-text-color: #232323; // Default
+
+
+/**
+    ##Heading Sizes
+      h1-h6
+ */
+
+// $alpha:     em(32);  // h1 32px 
+// $beta:      em(28);  // h2 28px
+// $gamma:     em(22);  // h3 22px
+// $delta:     em(18);  // h4 18px
+// $epsilon:   em(16);  // h5 16px
+// $zeta:      em(14);  // h6 14px

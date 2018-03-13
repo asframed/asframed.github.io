@@ -1,0 +1,26 @@
+/*------------------------------------*\
+    #Global Links
+\*------------------------------------*/
+
+/**
+    Global link Styles
+    ------------------
+ */
+
+a {
+
+    // $global-link-color defined in '/global/_defaults.scss'
+    color: $global-link-color; 
+
+
+    &:hover,
+    &:active, 
+    &:focus {
+        color: $global-link-hover;
+        text-decoration: none; }
+
+    // active / (Clicked)
+    &:active,
+    &.is--active {}
+
+}
